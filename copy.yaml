@@ -1,0 +1,10 @@
+---
+- hosts: aws-pvt
+  remote_user: ubuntu
+  become: yes
+  become_user: root
+  tasks:
+    - name: Copy files/dir
+      copy:
+        src: /root/searchmetrics-test/testdir/
+        dest: /home/ubuntu/testdir
