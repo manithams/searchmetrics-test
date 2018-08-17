@@ -1,0 +1,15 @@
+---
+- hosts: aws
+  remote_user: ubuntu
+  become: yes
+  become_user: root
+  tasks:
+    - name : Create user
+      user:
+        name: mms
+        password: '$6$86ny3d5ZBPzJVn$DbhL50wPvG5zO5V0UgQffoFUqSEzxs4pTTft2rioPPOFI0Hhh0JN6U4kN3744O3mPPX0yC7Z7777IV2XNkQIa.'
+        state: present
+        shell: /bin/bash
+        system: no
+        createhome: yes
+        home: /home/mms
